@@ -1,6 +1,7 @@
-matplotlib==3.8.4
-numpy>=1.21.6
-scipy==1.11.4
-setuptools==69.5.1
-tensorflow==2.17.0
-tensorflow_intel==2.17.0
+numpy>=1.24
+scipy>=1.10
+scikit-learn>=1.2
+pandas>=1.5
+matplotlib>=3.7
+seaborn>=0.12
+joblib>=1.2

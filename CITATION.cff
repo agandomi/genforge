@@ -1,0 +1,105 @@
+cff-version: 1.2.0
+title: "GenForge: Sculpting Solutions with Multi-Population Genetic Programming"
+message: "If you use this software, please cite it as below."
+type: software
+license: GPL-3.0-only
+authors:
+  - family-names: Khorshidi
+    given-names: Mohammad Sadegh
+    email: msadegh.khorshidi.ak@gmail.com
+repository-code: "https://github.com/maisamkhorshidi/genforge"
+version: "1.0"
+
+preferred-citation:
+  type: software
+  title: "GenForge: Sculpting Solutions with Multi-Population Genetic Programming"
+  authors:
+    - family-names: Khorshidi
+      given-names: Mohammad Sadegh
+  year: 2025
+  url: "https://github.com/maisamkhorshidi/genforge"
+
+references:
+  - type: article
+    title: "Semantic-Preserving Feature Partitioning for multi-view ensemble learning"
+    authors:
+      - family-names: Khorshidi
+        given-names: Mohammad Sadegh
+      - family-names: Yazdanjue
+        given-names: Navid
+      - family-names: Gharoun
+        given-names: Hassan
+      - family-names: Yazdani
+        given-names: Danial
+      - family-names: Nikoo
+        given-names: Mohammad Reza
+      - family-names: Chen
+        given-names: Fang
+      - family-names: Gandomi
+        given-names: Amir H.
+    journal: Information Fusion
+    year: 2025
+    volume: "122"
+    start: "103152"
+    doi: "10.1016/j.inffus.2025.103152"
+    url: "https://doi.org/10.1016/j.inffus.2025.103152"
+
+  - type: article
+    title: "Multi-population Ensemble Genetic Programming via Cooperative Coevolution and Multi-view Learning for Classification"
+    authors:
+      - family-names: Khorshidi
+        given-names: Mohammad Sadegh
+      - family-names: Yazdanjue
+        given-names: Navid
+      - family-names: Gharoun
+        given-names: Hassan
+      - family-names: Nikoo
+        given-names: Mohammad Reza
+      - family-names: Chen
+        given-names: Fang
+      - family-names: Gandomi
+        given-names: Amir H.
+    journal: arXiv
+    year: 2025
+    doi: "10.48550/arXiv.2509.19339"
+    url: "https://doi.org/10.48550/arXiv.2509.19339"
+
+  - type: article
+    title: "From embeddings to equations: Genetic-programming surrogates for interpretable transformer classification"
+    authors:
+      - family-names: Khorshidi
+        given-names: Mohammad Sadegh
+      - family-names: Yazdanjue
+        given-names: Navid
+      - family-names: Gharoun
+        given-names: Hassan
+      - family-names: Nikoo
+        given-names: Mohammad Reza
+      - family-names: Chen
+        given-names: Fang
+      - family-names: Gandomi
+        given-names: Amir H.
+    journal: arXiv
+    year: 2025
+    doi: "10.48550/arXiv.2509.21341"
+    url: "https://doi.org/10.48550/arXiv.2509.21341"
+
+  - type: article
+    title: "Domain-Informed Genetic Superposition Programming: A Case Study on SFRC Beams"
+    authors:
+      - family-names: Khorshidi
+        given-names: Mohammad Sadegh
+      - family-names: Yazdanjue
+        given-names: Navid
+      - family-names: Gharoun
+        given-names: Hassan
+      - family-names: Nikoo
+        given-names: Mohammad Reza
+      - family-names: Chen
+        given-names: Fang
+      - family-names: Gandomi
+        given-names: Amir H.
+    journal: arXiv
+    year: 2025
+    doi: "10.48550/arXiv.2509.21355"
+    url: "https://doi.org/10.48550/arXiv.2509.21355"

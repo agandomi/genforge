@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "genforge"
+dynamic = ["version"]
+description = "GenForge: Sculpting Solutions with Multi-Population Genetic Programming"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Mohammad Sadegh Khorshidi", email = "msadegh.khorshidi.ak@gmail.com" }
+]
+maintainers = [
+  { name = "Mohammad Sadegh Khorshidi", email = "msadegh.khorshidi.ak@gmail.com" }
+]
+keywords = ["genetic programming", "symbolic regression", "classification", "multi-view learning", "evolutionary computation", "ensemble"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = ["numpy>=1.24", "scipy>=1.10", "scikit-learn>=1.2", "pandas>=1.5", "matplotlib>=3.7", "seaborn>=0.12", "joblib>=1.2"]
+
+[project.urls]
+Homepage = "https://github.com/maisamkhorshidi/genforge"
+Issues = "https://github.com/maisamkhorshidi/genforge/issues"
+Documentation = "https://github.com/maisamkhorshidi/genforge#readme"
+
+[tool.setuptools]
+license-files = ["LICENSE"]
+
+[tool.setuptools.packages.find]
+include = ["genforge*"]
+
+[tool.setuptools.dynamic]
+version = { attr = "genforge.__version__" }

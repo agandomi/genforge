@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Example_ARWM: chosen ensemble #1</title>
+  <style>
+    :root {
+      /* Light theme */
+      --bg:#f3f4f6;          /* page background (light gray) */
+      --card:#eef0f3;        /* cards slightly darker than page */
+      --tree:#e5e7eb;        /* tree area background a bit darker than page */
+      --muted:#6b7280;       /* text-muted */
+      --text:#111827;        /* main text (near-black) */
+      --accent:#2563eb;      /* blue */
+      --border:#d1d5db;      /* light border */
+      --chip:#f3f4f6;        /* subtle chip */
+      --latex-font:"Latin Modern Math","STIX Two Math","CMU Serif","Times New Roman",serif;
+    }
+    html,body { background:var(--bg); color:var(--text); margin:0; font:14px/1.45 ui-sans-serif, system-ui, Segoe UI, Roboto, Arial; }
+    header { padding:28px 20px 8px 20px; border-bottom:1px solid var(--border); }
+    header h1 { margin:0 0 8px 0; font-size:22px; }
+    header p { margin:0; color:var(--muted); }
+
+    section.ensemble-weights, section.member, section.ensemble-fitness { padding:20px; border-bottom:1px solid var(--border); }
+    h2, h3, h4 { margin:0 0 12px 0; }
+
+    .table-wrap { overflow:auto; border:1px solid var(--border); border-radius:10px; background:var(--card); }
+    .table-wrap.tight table { min-width: 360px; }
+    table { border-collapse:collapse; width:100%; min-width:420px; }
+    th, td { padding:8px 10px; border-bottom:1px solid var(--border); text-align:right; color:var(--text); }
+    th:first-child, td:first-child { text-align:left; }
+    table.latex th, table.latex td { font-family: var(--latex-font); }
+
+    details summary { cursor:pointer; color:var(--accent); margin:12px 0; }
+    details.wgt summary { margin-top:18px; }
+
+    .gene-grid { display:grid; gap:14px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .gene-card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:12px; }
+    .gene-title { font-weight:600; margin-bottom:6px; }
+    .gene-code { color:var(--muted); margin-bottom:8px; }
+    /* Wrap long gene strings onto multiple lines and keep them away from the SVG */
+    .gene-code code {
+      background:var(--chip);
+      padding:3px 6px;
+      border-radius:6px;
+      display:block;
+      white-space:pre-wrap;       /* allow newlines and wrapping */
+      word-break:break-word;      /* break long tokens if needed */
+      overflow-wrap:anywhere;     /* aggressive wrapping for very long strings */
+      line-height:1.35;
+      margin-bottom:6px;
+    }
+
+    .gene-svg { overflow:auto; background:var(--tree); border-radius:10px; }
+
+    .metrics h4 { margin: 0 0 8px 0; }
+  </style>
+</head>
+<body>
+  
+    <header>
+      <h1>Example_ARWM: chosen ensemble #1</h1>
+      <p>This report shows the chosen ensemble, the member individuals per population, and each member&apos;s gene trees.
+      Node labels are the exact function names from the GenForge run (e.g., <code>plus</code>, <code>minus</code>, <code>times</code>, <code>divide</code>). When available, softmax weights (genes → classes) show an explicit final <em>bias</em> column; ensemble mixing weights and fitness values (with ranks) are also shown.</p>
+    </header>
+    
+  
+    <section class="ensemble-weights">
+      <h2>Ensemble mixing weights</h2>
+      <div class="table-wrap">
+        <table class="latex"><tr><th>Population</th><th>w[c=0]</th><th>w[c=1]</th><th>w[c=2]</th><th>w[c=3]</th></tr><tr><td>0</td><td>0.0188041</td><td>0.75329</td><td>0.284964</td><td>0.638939</td></tr>
+<tr><td>1</td><td>0.981196</td><td>0.24671</td><td>0.715036</td><td>0.361061</td></tr></table>
+      </div>
+    </section>
+    
+  
+    <section class="ensemble-fitness">
+      <h2>Ensemble fitness &amp; rank</h2>
+      <div class="table-wrap tight">
+        <table class="latex">
+          <tr><th>Split</th><th>Fitness</th><th>Rank among ensembles</th></tr>
+          <tr><td>train</td><td>0.643024</td><td>1 / 10</td></tr><tr><td>validation</td><td>0.646702</td><td>1 / 10</td></tr><tr><td>test</td><td>0.661397</td><td>1 / 10</td></tr>
+        </table>
+      </div>
+    </section>
+    
+  
+        <section class="member">
+          <h3>Population 0 · Individual 1</h3>
+          
+    <section class="metrics">
+      <h4>Isolated fitness &amp; rank</h4>
+      <div class="table-wrap tight">
+        <table class="latex">
+          <tr><th>Split</th><th>Fitness</th><th>Rank in pop 0</th></tr>
+          <tr><td>train</td><td>0.845263</td><td>7 / 10</td></tr><tr><td>validation</td><td>0.87719</td><td>9 / 10</td></tr><tr><td>test</td><td>0.880597</td><td>9 / 10</td></tr>
+        </table>
+      </div>
+    </section>
+    
+          <details open>
+            <summary>Gene trees</summary>
+            <div class="gene-grid">
+              
+            <div class="gene-card">
+              <div class="gene-title">Gene 1</div>
+              <div class="gene-code"><code>times([-9.2225],x218)</code></div>
+              <div class="gene-svg"><svg width="100" height="108" viewBox="0 0 100 108" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gene tree">
+<rect x="0" y="0" width="100" height="108" fill="#e5e7eb"/>
+<line x1="50.0" y1="24.0" x2="24.0" y2="84.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="50.0" y1="24.0" x2="76.0" y2="84.0" stroke="#000000" stroke-width="1.5"/>
+<circle cx="50.0" cy="24.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="50.0" y="28.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">times</text>
+<circle cx="24.0" cy="84.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="24.0" y="88.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">-9.2225</text>
+<circle cx="76.0" cy="84.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="76.0" y="88.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x218</text>
+</svg></div>
+            </div>
+            
+            <div class="gene-card">
+              <div class="gene-title">Gene 2</div>
+              <div class="gene-code"><code>plus(times(x25,x54),times(times(x30,x300),minus([-9.2225],x8)))</code></div>
+              <div class="gene-svg"><svg width="308" height="228" viewBox="0 0 308 228" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gene tree">
+<rect x="0" y="0" width="308" height="228" fill="#e5e7eb"/>
+<line x1="50.0" y1="84.0" x2="24.0" y2="144.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="50.0" y1="84.0" x2="76.0" y2="144.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="154.0" y1="24.0" x2="50.0" y2="84.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="154.0" y1="144.0" x2="128.0" y2="204.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="154.0" y1="144.0" x2="180.0" y2="204.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="206.0" y1="84.0" x2="154.0" y2="144.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="258.0" y1="144.0" x2="232.0" y2="204.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="258.0" y1="144.0" x2="284.0" y2="204.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="206.0" y1="84.0" x2="258.0" y2="144.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="154.0" y1="24.0" x2="206.0" y2="84.0" stroke="#000000" stroke-width="1.5"/>
+<circle cx="154.0" cy="24.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="154.0" y="28.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">plus</text>
+<circle cx="50.0" cy="84.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="50.0" y="88.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">times</text>
+<circle cx="24.0" cy="144.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="24.0" y="148.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x25</text>
+<circle cx="76.0" cy="144.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="76.0" y="148.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x54</text>
+<circle cx="206.0" cy="84.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="206.0" y="88.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">times</text>
+<circle cx="154.0" cy="144.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="154.0" y="148.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">times</text>
+<circle cx="128.0" cy="204.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="128.0" y="208.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x30</text>
+<circle cx="180.0" cy="204.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="180.0" y="208.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x300</text>
+<circle cx="258.0" cy="144.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="258.0" y="148.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">minus</text>
+<circle cx="232.0" cy="204.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="232.0" y="208.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">-9.2225</text>
+<circle cx="284.0" cy="204.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="284.0" y="208.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x8</text>
+</svg></div>
+            </div>
+            
+            <div class="gene-card">
+              <div class="gene-title">Gene 3</div>
+              <div class="gene-code"><code>minus(x69,x226)</code></div>
+              <div class="gene-svg"><svg width="100" height="108" viewBox="0 0 100 108" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gene tree">
+<rect x="0" y="0" width="100" height="108" fill="#e5e7eb"/>
+<line x1="50.0" y1="24.0" x2="24.0" y2="84.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="50.0" y1="24.0" x2="76.0" y2="84.0" stroke="#000000" stroke-width="1.5"/>
+<circle cx="50.0" cy="24.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="50.0" y="28.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">minus</text>
+<circle cx="24.0" cy="84.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="24.0" y="88.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x69</text>
+<circle cx="76.0" cy="84.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="76.0" y="88.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x226</text>
+</svg></div>
+            </div>
+            
+            <div class="gene-card">
+              <div class="gene-title">Gene 4</div>
+              <div class="gene-code"><code>minus(plus(x54,plus(x54,x69)),x36)</code></div>
+              <div class="gene-svg"><svg width="204" height="228" viewBox="0 0 204 228" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gene tree">
+<rect x="0" y="0" width="204" height="228" fill="#e5e7eb"/>
+<line x1="76.0" y1="84.0" x2="24.0" y2="144.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="102.0" y1="144.0" x2="76.0" y2="204.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="102.0" y1="144.0" x2="128.0" y2="204.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="76.0" y1="84.0" x2="102.0" y2="144.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="102.0" y1="24.0" x2="76.0" y2="84.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="102.0" y1="24.0" x2="180.0" y2="84.0" stroke="#000000" stroke-width="1.5"/>
+<circle cx="102.0" cy="24.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="102.0" y="28.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">minus</text>
+<circle cx="76.0" cy="84.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="76.0" y="88.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">plus</text>
+<circle cx="24.0" cy="144.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="24.0" y="148.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x54</text>
+<circle cx="102.0" cy="144.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="102.0" y="148.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">plus</text>
+<circle cx="76.0" cy="204.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="76.0" y="208.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x54</text>
+<circle cx="128.0" cy="204.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="128.0" y="208.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x69</text>
+<circle cx="180.0" cy="84.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="180.0" y="88.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x36</text>
+</svg></div>
+            </div>
+            
+            <div class="gene-card">
+              <div class="gene-title">Gene 5</div>
+              <div class="gene-code"><code>times(x43,minus(times([9.0751],x300),[-9.2225]))</code></div>
+              <div class="gene-svg"><svg width="204" height="228" viewBox="0 0 204 228" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gene tree">
+<rect x="0" y="0" width="204" height="228" fill="#e5e7eb"/>
+<line x1="102.0" y1="24.0" x2="24.0" y2="84.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="102.0" y1="144.0" x2="76.0" y2="204.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="102.0" y1="144.0" x2="128.0" y2="204.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="128.0" y1="84.0" x2="102.0" y2="144.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="128.0" y1="84.0" x2="180.0" y2="144.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="102.0" y1="24.0" x2="128.0" y2="84.0" stroke="#000000" stroke-width="1.5"/>
+<circle cx="102.0" cy="24.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="102.0" y="28.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">times</text>
+<circle cx="24.0" cy="84.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="24.0" y="88.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x43</text>
+<circle cx="128.0" cy="84.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="128.0" y="88.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">minus</text>
+<circle cx="102.0" cy="144.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="102.0" y="148.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">times</text>
+<circle cx="76.0" cy="204.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="76.0" y="208.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">9.0751</text>
+<circle cx="128.0" cy="204.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="128.0" y="208.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x300</text>
+<circle cx="180.0" cy="144.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="180.0" y="148.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">-9.2225</text>
+</svg></div>
+            </div>
+            
+            </div>
+          </details>
+          <details><summary>Softmax logits per class (structure)</summary><pre>z[c=0] = w[c=0, g=0]·G_j + w[c=0, g=1]·G_j + w[c=0, g=2]·G_j + w[c=0, g=3]·G_j + w[c=0, g=4]·G_j + bias[c]
+z[c=1] = w[c=1, g=0]·G_j + w[c=1, g=1]·G_j + w[c=1, g=2]·G_j + w[c=1, g=3]·G_j + w[c=1, g=4]·G_j + bias[c]
+z[c=2] = w[c=2, g=0]·G_j + w[c=2, g=1]·G_j + w[c=2, g=2]·G_j + w[c=2, g=3]·G_j + w[c=2, g=4]·G_j + bias[c]
+z[c=3] = w[c=3, g=0]·G_j + w[c=3, g=1]·G_j + w[c=3, g=2]·G_j + w[c=3, g=3]·G_j + w[c=3, g=4]·G_j + bias[c]</pre></details>
+          
+    <details class="wgt">
+      <summary>Softmax weights (genes → classes) + bias</summary>
+      <div class="table-wrap">
+        <table class="latex"><tr><th>Class</th><th>w[g=0]</th><th>w[g=1]</th><th>w[g=2]</th><th>w[g=3]</th><th>w[g=4]</th><th>bias</th></tr><tr><td>0</td><td>0.269602</td><td>0.702502</td><td>0.71442</td><td>-1.20457</td><td>-0.591145</td><td>0.641991</td></tr><tr><td>1</td><td>0.248459</td><td>-0.134789</td><td>-0.633969</td><td>-0.063108</td><td>-0.625637</td><td>0.943952</td></tr><tr><td>2</td><td>0.437671</td><td>0.25145</td><td>-0.715189</td><td>0.0391136</td><td>-0.652902</td><td>-1.20041</td></tr><tr><td>3</td><td>-0.718771</td><td>0.550399</td><td>0.466859</td><td>0.439323</td><td>0.701097</td><td>-0.500896</td></tr></table>
+      </div>
+    </details>
+    
+        </section>
+        
+        <section class="member">
+          <h3>Population 1 · Individual 1</h3>
+          
+    <section class="metrics">
+      <h4>Isolated fitness &amp; rank</h4>
+      <div class="table-wrap tight">
+        <table class="latex">
+          <tr><th>Split</th><th>Fitness</th><th>Rank in pop 1</th></tr>
+          <tr><td>train</td><td>0.855807</td><td>6 / 10</td></tr><tr><td>validation</td><td>0.801813</td><td>4 / 10</td></tr><tr><td>test</td><td>0.848526</td><td>5 / 10</td></tr>
+        </table>
+      </div>
+    </section>
+    
+          <details open>
+            <summary>Gene trees</summary>
+            <div class="gene-grid">
+              
+            <div class="gene-card">
+              <div class="gene-title">Gene 1</div>
+              <div class="gene-code"><code>x213</code></div>
+              <div class="gene-svg"><svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gene tree">
+<rect x="0" y="0" width="48" height="48" fill="#e5e7eb"/>
+<circle cx="24.0" cy="24.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="24.0" y="28.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x213</text>
+</svg></div>
+            </div>
+            
+            <div class="gene-card">
+              <div class="gene-title">Gene 2</div>
+              <div class="gene-code"><code>plus(plus(x292,times(x194,x221)),x221)</code></div>
+              <div class="gene-svg"><svg width="204" height="228" viewBox="0 0 204 228" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gene tree">
+<rect x="0" y="0" width="204" height="228" fill="#e5e7eb"/>
+<line x1="76.0" y1="84.0" x2="24.0" y2="144.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="102.0" y1="144.0" x2="76.0" y2="204.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="102.0" y1="144.0" x2="128.0" y2="204.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="76.0" y1="84.0" x2="102.0" y2="144.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="102.0" y1="24.0" x2="76.0" y2="84.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="102.0" y1="24.0" x2="180.0" y2="84.0" stroke="#000000" stroke-width="1.5"/>
+<circle cx="102.0" cy="24.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="102.0" y="28.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">plus</text>
+<circle cx="76.0" cy="84.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="76.0" y="88.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">plus</text>
+<circle cx="24.0" cy="144.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="24.0" y="148.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x292</text>
+<circle cx="102.0" cy="144.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="102.0" y="148.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">times</text>
+<circle cx="76.0" cy="204.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="76.0" y="208.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x194</text>
+<circle cx="128.0" cy="204.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="128.0" y="208.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x221</text>
+<circle cx="180.0" cy="84.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="180.0" y="88.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x221</text>
+</svg></div>
+            </div>
+            
+            <div class="gene-card">
+              <div class="gene-title">Gene 3</div>
+              <div class="gene-code"><code>plus(minus(x77,x213),x212)</code></div>
+              <div class="gene-svg"><svg width="152" height="168" viewBox="0 0 152 168" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gene tree">
+<rect x="0" y="0" width="152" height="168" fill="#e5e7eb"/>
+<line x1="50.0" y1="84.0" x2="24.0" y2="144.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="50.0" y1="84.0" x2="76.0" y2="144.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="76.0" y1="24.0" x2="50.0" y2="84.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="76.0" y1="24.0" x2="128.0" y2="84.0" stroke="#000000" stroke-width="1.5"/>
+<circle cx="76.0" cy="24.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="76.0" y="28.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">plus</text>
+<circle cx="50.0" cy="84.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="50.0" y="88.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">minus</text>
+<circle cx="24.0" cy="144.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="24.0" y="148.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x77</text>
+<circle cx="76.0" cy="144.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="76.0" y="148.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x213</text>
+<circle cx="128.0" cy="84.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="128.0" y="88.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x212</text>
+</svg></div>
+            </div>
+            
+            <div class="gene-card">
+              <div class="gene-title">Gene 4</div>
+              <div class="gene-code"><code>minus(minus(minus(x292,x453),minus(x77,x213)),plus(minus(x292,x213),plus(x35,x317)))</code></div>
+              <div class="gene-svg"><svg width="412" height="228" viewBox="0 0 412 228" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gene tree">
+<rect x="0" y="0" width="412" height="228" fill="#e5e7eb"/>
+<line x1="50.0" y1="144.0" x2="24.0" y2="204.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="50.0" y1="144.0" x2="76.0" y2="204.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="102.0" y1="84.0" x2="50.0" y2="144.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="154.0" y1="144.0" x2="128.0" y2="204.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="154.0" y1="144.0" x2="180.0" y2="204.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="102.0" y1="84.0" x2="154.0" y2="144.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="206.0" y1="24.0" x2="102.0" y2="84.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="258.0" y1="144.0" x2="232.0" y2="204.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="258.0" y1="144.0" x2="284.0" y2="204.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="310.0" y1="84.0" x2="258.0" y2="144.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="362.0" y1="144.0" x2="336.0" y2="204.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="362.0" y1="144.0" x2="388.0" y2="204.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="310.0" y1="84.0" x2="362.0" y2="144.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="206.0" y1="24.0" x2="310.0" y2="84.0" stroke="#000000" stroke-width="1.5"/>
+<circle cx="206.0" cy="24.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="206.0" y="28.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">minus</text>
+<circle cx="102.0" cy="84.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="102.0" y="88.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">minus</text>
+<circle cx="50.0" cy="144.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="50.0" y="148.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">minus</text>
+<circle cx="24.0" cy="204.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="24.0" y="208.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x292</text>
+<circle cx="76.0" cy="204.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="76.0" y="208.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x453</text>
+<circle cx="154.0" cy="144.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="154.0" y="148.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">minus</text>
+<circle cx="128.0" cy="204.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="128.0" y="208.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x77</text>
+<circle cx="180.0" cy="204.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="180.0" y="208.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x213</text>
+<circle cx="310.0" cy="84.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="310.0" y="88.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">plus</text>
+<circle cx="258.0" cy="144.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="258.0" y="148.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">minus</text>
+<circle cx="232.0" cy="204.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="232.0" y="208.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x292</text>
+<circle cx="284.0" cy="204.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="284.0" y="208.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x213</text>
+<circle cx="362.0" cy="144.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="362.0" y="148.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">plus</text>
+<circle cx="336.0" cy="204.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="336.0" y="208.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x35</text>
+<circle cx="388.0" cy="204.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="388.0" y="208.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x317</text>
+</svg></div>
+            </div>
+            
+            <div class="gene-card">
+              <div class="gene-title">Gene 5</div>
+              <div class="gene-code"><code>minus(minus(x77,x213),minus(minus(x213,x35),minus(x77,x213)))</code></div>
+              <div class="gene-svg"><svg width="308" height="228" viewBox="0 0 308 228" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gene tree">
+<rect x="0" y="0" width="308" height="228" fill="#e5e7eb"/>
+<line x1="50.0" y1="84.0" x2="24.0" y2="144.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="50.0" y1="84.0" x2="76.0" y2="144.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="154.0" y1="24.0" x2="50.0" y2="84.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="154.0" y1="144.0" x2="128.0" y2="204.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="154.0" y1="144.0" x2="180.0" y2="204.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="206.0" y1="84.0" x2="154.0" y2="144.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="258.0" y1="144.0" x2="232.0" y2="204.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="258.0" y1="144.0" x2="284.0" y2="204.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="206.0" y1="84.0" x2="258.0" y2="144.0" stroke="#000000" stroke-width="1.5"/>
+<line x1="154.0" y1="24.0" x2="206.0" y2="84.0" stroke="#000000" stroke-width="1.5"/>
+<circle cx="154.0" cy="24.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="154.0" y="28.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">minus</text>
+<circle cx="50.0" cy="84.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="50.0" y="88.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">minus</text>
+<circle cx="24.0" cy="144.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="24.0" y="148.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x77</text>
+<circle cx="76.0" cy="144.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="76.0" y="148.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x213</text>
+<circle cx="206.0" cy="84.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="206.0" y="88.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">minus</text>
+<circle cx="154.0" cy="144.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="154.0" y="148.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">minus</text>
+<circle cx="128.0" cy="204.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="128.0" y="208.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x213</text>
+<circle cx="180.0" cy="204.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="180.0" y="208.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x35</text>
+<circle cx="258.0" cy="144.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="258.0" y="148.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">minus</text>
+<circle cx="232.0" cy="204.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="232.0" y="208.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x77</text>
+<circle cx="284.0" cy="204.0" r="16" fill="#cfe8ff" stroke="#000000" stroke-width="1.2"/>
+<text x="284.0" y="208.0" font-size="11" text-anchor="middle" fill="#000000" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">x213</text>
+</svg></div>
+            </div>
+            
+            </div>
+          </details>
+          <details><summary>Softmax logits per class (structure)</summary><pre>z[c=0] = w[c=0, g=0]·G_j + w[c=0, g=1]·G_j + w[c=0, g=2]·G_j + w[c=0, g=3]·G_j + w[c=0, g=4]·G_j + bias[c]
+z[c=1] = w[c=1, g=0]·G_j + w[c=1, g=1]·G_j + w[c=1, g=2]·G_j + w[c=1, g=3]·G_j + w[c=1, g=4]·G_j + bias[c]
+z[c=2] = w[c=2, g=0]·G_j + w[c=2, g=1]·G_j + w[c=2, g=2]·G_j + w[c=2, g=3]·G_j + w[c=2, g=4]·G_j + bias[c]
+z[c=3] = w[c=3, g=0]·G_j + w[c=3, g=1]·G_j + w[c=3, g=2]·G_j + w[c=3, g=3]·G_j + w[c=3, g=4]·G_j + bias[c]</pre></details>
+          
+    <details class="wgt">
+      <summary>Softmax weights (genes → classes) + bias</summary>
+      <div class="table-wrap">
+        <table class="latex"><tr><th>Class</th><th>w[g=0]</th><th>w[g=1]</th><th>w[g=2]</th><th>w[g=3]</th><th>w[g=4]</th><th>bias</th></tr><tr><td>0</td><td>-0.328068</td><td>-0.903995</td><td>-0.593832</td><td>0.685266</td><td>0.17993</td><td>-0.722108</td></tr><tr><td>1</td><td>-0.164893</td><td>1.48685</td><td>-0.525486</td><td>0.747533</td><td>-0.812039</td><td>1.65607</td></tr><tr><td>2</td><td>-0.26572</td><td>0.752725</td><td>-0.550876</td><td>0.0190428</td><td>-0.582306</td><td>-1.28792</td></tr><tr><td>3</td><td>0.934388</td><td>-0.0698739</td><td>0.559761</td><td>-1.54404</td><td>0.521743</td><td>0.0494911</td></tr></table>
+      </div>
+    </details>
+    
+        </section>
+        
+</body>
+</html>
